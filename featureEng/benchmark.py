@@ -71,7 +71,7 @@ METHODS = {
         'use_pruning':            True,   # ✅ Optuna cắt trial kém
         'use_early_stop':         True,   # ✅ Dừng khi không cải thiện
         'use_dart':               True,   # ✅ DART Dropout giảm overfit
-        'use_class_weights':      True,   # ✅ Cân bằng class
+        'use_class_weights':      False,  # ❌ Cân bằng class
         'use_focal_loss':         False,  # ❌ Tắt — hại với GOSS
         'use_two_stage':          True,   # ✅ Tìm hyperparams tốt hơn
         'use_weighted_ensemble':  True,   # ✅ Cây tốt đóng góp nhiều hơn
