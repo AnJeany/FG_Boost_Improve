@@ -1,0 +1,50 @@
+
+output_path: "./logs/output_UCIdata" #5use round12, 4use round15,
+
+dataset_file: datasets.UCIdata
+seed: 42
+method:  'xgbfeatnew' # 'tuneXGB', 'xgboost';  'SVM', 'randomforest', 'decision_tree', adaboost, qda, gaussian_process, knn, gaussian_nb,
+#histgradientboost, bagging, extratree, gradientboost, stack, voting
+class_label: 32
+data_num: 53
+folds: 4
+stratified: yes
+source: 'D:\XGBoost-by-ensemble-feature-engineering-main\XGBoost-by-ensemble-feature-engineering-main\data'
+# this is for xgboost
+space: 'poincare' # ['poincare', 'original']
+max_depth: 6
+round: 12
+
+subsample:
+colsample_bylevel:
+colsample_bynode:
+colsample_bytree:
+eta:
+gamma:
+
+# this is for hsvm
+pretrained: False
+
+
+# this is fro linearHsvm
+c: 1.0 # [0.1, 1, 10],
+num_epochs: 100
+lr: 0.001
+batch_size: 20
+
+
+# this is for horoRF
+num_jobs: 4
+Cexp_min: -3
+Cexp_max: 5
+hyperclasses: yes
+beta: 0
+
+number_of_backup_points: 5
+radius_search: random # ['random', 'exhaustive', 'subsample']
+subsample_size: 1 # used when radius_search is 'subsample'
+
+criterion: 'gini' # ['gini', 'entropy']
+num_trees: 1
+min_samples_leaf: 1
+min_impurity_decrease: 0.0
